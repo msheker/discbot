@@ -1,8 +1,5 @@
 import discord
-from dotenv import load_dotenv
-
-load_dotenv()
-
+from keys import DISCORD_TOKEN
 
 client = discord.Client()
 
@@ -19,4 +16,4 @@ async def on_message(message):
         num = message.content.split(" ")[1]
         await message.channel.send(num)
 
-client.run(os.getenv('DISCORD_TOKEN'))
+client.run(DISCORD_TOKEN)
